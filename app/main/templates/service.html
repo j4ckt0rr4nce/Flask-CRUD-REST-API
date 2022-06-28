@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Index
+{% endblock title %}
+
+{% block content %}
+
+<div class="ui segment">
+	
+	<div class="ui green message">Your profile has been updated</div>
+
+	<h3>New Items: </h3>
+	<div class="ui grid">
+		<div class="row">
+			<div class="six wide column">
+				<img class="ui medium rounded image" src="">
+				<div class="row mt-5">
+					<button class="ui secondary button" id="modal-btn">Add new items</button>
+				</div>
+			</div>
+			<div class="ten wide column">
+				<table class="ui table">
+					<tbody>
+						<tr>
+							<td><a href="{{ url_for('customer') }}">Customer Management Service</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><a href="{{ url_for('address') }}">Address Management Service</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><a href="{{ url_for('order') }}">Order Management Service</a></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><a href="{{ url_for('item') }}">Item Management Service</a></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock content %}

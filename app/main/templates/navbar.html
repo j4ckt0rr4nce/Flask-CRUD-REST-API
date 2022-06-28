@@ -1,0 +1,21 @@
+<div class="ui inverted menu mb-7">
+  <div class="ui container">
+    <a href="{{ url_for('home') }}" class="">
+      <h3>Home</h3>
+    </a>
+    <a href="{{ url_for('service') }}" class="">
+      <h3 style="margin-left:30px;">Service</h3>
+    </a>
+    <div class="right menu">
+      {% if current_user.is_anonymous %}
+      <a href="{{ url_for('login') }}" class="ui item">
+        Login
+      </a>
+      {% else %}
+      <a href="{{ url_for('logout') }}" class="ui item">
+        Logout
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

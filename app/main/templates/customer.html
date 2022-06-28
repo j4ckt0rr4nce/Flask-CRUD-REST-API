@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="ui segment">
+	
+	<div class="ui green message">Your profile has been updated</div>
+
+    <div class="ui grid">
+        <div class="row">
+            <div class="three wide column">
+	            <h3>New Items: </h3>
+            </div>
+            <div class="six wide column">
+	            <h3>Customers Management Service</h3>
+            </div>
+        </div>
+    </div>
+	<div class="ui grid">
+		<div class="row">
+			<div class="three wide column">
+				<form class="">
+					<div class="form-group">
+					  <label for="files">Upload a CSV formatted file:</label>
+					  <input class="mt-5" type="file" id="files" accept=".csv" required />
+					</div>
+					<div class="mt-5">
+					 <button type="submit" id="submit-file" class="ui secondary button">Upload File</button>
+					 </div>
+				</form>
+				<div class="row" id="parsed_csv_list">
+				</div>
+			</div>
+			<div class="six wide column">
+				<table class="ui table">
+					<tbody>
+						<tr>
+							<td><button id="p_get_all" class="ui primary button button-width">List All Persons</button></td>
+						</tr>
+						<tr>
+							<td><button id="c_get_all" class="ui primary button button-width">List All Companies</button></td>
+						</tr>
+						<tr>
+							<td>
+								<form id="person_form">
+									<input class="id_color button-width" type="number" name="p_put_id" placeholder="insert ID to update/leave blank to create" />
+									<input class="button-width" type="number" name="p_id" placeholder="id" />
+									<input class="button-width" type="number" name="p_phone_number" placeholder="phone number" />
+									<input class="button-width" type="text" name="p_email_address" placeholder="email address" />
+									<input class="button-width" type="text" name="p_first_name" placeholder="first name" />
+									<input class="button-width" type="text" name="p_last_name" placeholder="last name" />
+									<input class="button-width" type="text" name="p_date_of_birth" placeholder="date of birth" />
+									<input class="ui primary button button-width button-width" type="submit" value="Create/Update Person" />
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<form id="company_form">
+									<input class="id_color button-width" type="number" name="c_put_id" placeholder="insert ID to update/leave blank to create" />
+									<input class="button-width" type="number" name="c_id" placeholder="id" />
+									<input class="button-width" type="number" name="c_phone_number" placeholder="phone number" />
+									<input class="button-width" type="text" name="c_email_address" placeholder="email address" />
+									<input class="button-width" type="number" name="c_ICO" placeholder="ICO" />
+									<input class="button-width" type="number" name="c_DIC" placeholder="DIC" />
+									<input class="ui primary button button-width button-width" type="submit" value="Create/Update Company" />
+								</form>
+							</td>
+						</tr>
+                        <tr>
+							<td>
+								<button id="p_get_id" class="ui primary button button-width">List specific person by ID</button>
+								<input class="id_color button-width" type="number" name="p_get_id" placeholder="insert ID of customer to list" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button id="c_get_id" class="ui primary button button-width">List specific company by ID</button>
+								<input class="id_color button-width" type="number" name="c_get_id" placeholder="insert ID of customer to list" />
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button id="delete_id" class="ui primary button button-width">Delete Specific Customers by ID</button>
+								<input class="id_color button-width" type="number" name="delete_id" placeholder="insert ID of customer to delete" />
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+            <div id="list-wrapper" class="seven wide column">
+                
+            </div>	
+		</div>
+	</div>
+</div>
+
+{% endblock content %}
